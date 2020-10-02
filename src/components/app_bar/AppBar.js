@@ -39,49 +39,14 @@ export const DesktopAppBar = (props) => {
     props.changeView(views[index]);
   };
   let viewIcon;
-  if (props.view === "card") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M4 5h3v13H4zm14 0h3v13h-3zM8 18h9V5H8v13zm2-11h5v9h-5V7z" />
-        <path d="M10 7h5v9h-5z" opacity=".3" />
-      </svg>
-    );
-  } else if (props.view === "list") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" opacity=".87" />
-        <path d="M5 11h2v2H5zm0 4h2v2H5zm0-8h2v2H5zm4 0h9v2H9zm0 8h9v2H9zm0-4h9v2H9z" opacity=".3" />
-        <path d="M3 5v14h17V5H3zm4 12H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V7h2v2zm11 8H9v-2h9v2zm0-4H9v-2h9v2zm0-4H9V7h9v2z" />
-      </svg>
-    );
+  if (props.view === "list") {
+    viewIcon = "view_list";
   } else if (props.view === "imageList") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path
-          d="M11 12.5h3V16h-3zM11 7h3v3.5h-3zm-5 5.5h3V16H6zM6 7h3v3.5H6zm10 0h3v3.5h-3zm0 5.5h3V16h-3z"
-          opacity=".3"
-        />
-        <path d="M4 5v13h17V5H4zm5 11H6v-3.5h3V16zm0-5.5H6V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5z" />
-      </svg>
-    );
+    viewIcon = "view_module";
   } else if (props.view === "compact") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M6 7h3v9H6zm5 0h3v9h-3zm5 0h3v9h-3z" opacity=".3" />
-        <path d="M4 5v13h17V5H4zm5 11H6V7h3v9zm5 0h-3V7h3v9zm5 0h-3V7h3v9z" />
-      </svg>
-    );
+    viewIcon = "view_column";
   } else {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M5 5h15v3H5zm12 5h3v9h-3zm-7 0h5v9h-5zm-5 0h3v9H5z" opacity=".3" />
-        <path d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 19H5v-9h3v9zm7 0h-5v-9h5v9zm5 0h-3v-9h3v9zm0-11H5V5h15v3z" />
-      </svg>
-    );
+    viewIcon = "view_array";
   }
   const title = {
     calendar: "Calendar",
@@ -199,13 +164,7 @@ export const DesktopAppBar = (props) => {
             onClose={closeViewMenu}
           />
           <Tooltip enterDelay={500} content="View" align="bottom">
-            <div onClick={openViewMenu}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 3 }}>
-                  {viewIcon}
-                </div>
-              </Ripple>
-            </div>
+            <TopAppBarActionItem icon={viewIcon} onClick={openViewMenu} style={{ "--animation-delay": 3 }} />
           </Tooltip>
         </MenuSurfaceAnchor>
       </TopAppBarSection>
@@ -272,49 +231,14 @@ export const TabletAppBar = (props) => {
     setSearchOpen(false);
   };
   let viewIcon;
-  if (props.view === "card") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M4 5h3v13H4zm14 0h3v13h-3zM8 18h9V5H8v13zm2-11h5v9h-5V7z" />
-        <path d="M10 7h5v9h-5z" opacity=".3" />
-      </svg>
-    );
-  } else if (props.view === "list") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" opacity=".87" />
-        <path d="M5 11h2v2H5zm0 4h2v2H5zm0-8h2v2H5zm4 0h9v2H9zm0 8h9v2H9zm0-4h9v2H9z" opacity=".3" />
-        <path d="M3 5v14h17V5H3zm4 12H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V7h2v2zm11 8H9v-2h9v2zm0-4H9v-2h9v2zm0-4H9V7h9v2z" />
-      </svg>
-    );
+  if (props.view === "list") {
+    viewIcon = "view_list";
   } else if (props.view === "imageList") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path
-          d="M11 12.5h3V16h-3zM11 7h3v3.5h-3zm-5 5.5h3V16H6zM6 7h3v3.5H6zm10 0h3v3.5h-3zm0 5.5h3V16h-3z"
-          opacity=".3"
-        />
-        <path d="M4 5v13h17V5H4zm5 11H6v-3.5h3V16zm0-5.5H6V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5z" />
-      </svg>
-    );
+    viewIcon = "view_module";
   } else if (props.view === "compact") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M6 7h3v9H6zm5 0h3v9h-3zm5 0h3v9h-3z" opacity=".3" />
-        <path d="M4 5v13h17V5H4zm5 11H6V7h3v9zm5 0h-3V7h3v9zm5 0h-3V7h3v9z" />
-      </svg>
-    );
+    viewIcon = "view_column";
   } else {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M5 5h15v3H5zm12 5h3v9h-3zm-7 0h5v9h-5zm-5 0h3v9H5z" opacity=".3" />
-        <path d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 19H5v-9h3v9zm7 0h-5v-9h5v9zm5 0h-3v-9h3v9zm0-11H5V5h15v3z" />
-      </svg>
-    );
+    viewIcon = "view_array";
   }
   const title = {
     calendar: "Calendar",
@@ -381,18 +305,7 @@ export const TabletAppBar = (props) => {
             />
           </ToggleGroup>
           <Tooltip enterDelay={500} content="Category" align="bottom">
-            <div className="category-button" onClick={props.openStatisticsDialog}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 0 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <circle cx="17.5" cy="17.5" opacity=".3" r="2.5" />
-                    <path d="M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z" opacity=".3" />
-                    <path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM11 13.5H3v8h8v-8zm-2 6H5v-4h4v4z" />
-                  </svg>
-                </div>
-              </Ripple>
-            </div>
+            <TopAppBarActionItem icon="category" className="category-button" onClick={props.openStatisticsDialog} style={{ "--animation-delay": 0 }} />
           </Tooltip>
         </TopAppBarSection>
       )
@@ -421,13 +334,7 @@ export const TabletAppBar = (props) => {
             onClose={closeViewMenu}
           />
           <Tooltip content="View" align="bottom">
-            <div onClick={openViewMenu}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 3 }}>
-                  {viewIcon}
-                </div>
-              </Ripple>
-            </div>
+            <TopAppBarActionItem icon={viewIcon} onClick={openViewMenu} style={{ "--animation-delay": 3 }} />
           </Tooltip>
         </MenuSurfaceAnchor>
         <div>
@@ -513,49 +420,14 @@ export const MobileAppBar = (props) => {
     setSearchOpen(false);
   };
   let viewIcon;
-  if (props.view === "card") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M4 5h3v13H4zm14 0h3v13h-3zM8 18h9V5H8v13zm2-11h5v9h-5V7z" />
-        <path d="M10 7h5v9h-5z" opacity=".3" />
-      </svg>
-    );
-  } else if (props.view === "list") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" opacity=".87" />
-        <path d="M5 11h2v2H5zm0 4h2v2H5zm0-8h2v2H5zm4 0h9v2H9zm0 8h9v2H9zm0-4h9v2H9z" opacity=".3" />
-        <path d="M3 5v14h17V5H3zm4 12H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V7h2v2zm11 8H9v-2h9v2zm0-4H9v-2h9v2zm0-4H9V7h9v2z" />
-      </svg>
-    );
+  if (props.view === "list") {
+    viewIcon = "view_list";
   } else if (props.view === "imageList") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path
-          d="M11 12.5h3V16h-3zM11 7h3v3.5h-3zm-5 5.5h3V16H6zM6 7h3v3.5H6zm10 0h3v3.5h-3zm0 5.5h3V16h-3z"
-          opacity=".3"
-        />
-        <path d="M4 5v13h17V5H4zm5 11H6v-3.5h3V16zm0-5.5H6V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5z" />
-      </svg>
-    );
+    viewIcon = "view_module";
   } else if (props.view === "compact") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M6 7h3v9H6zm5 0h3v9h-3zm5 0h3v9h-3z" opacity=".3" />
-        <path d="M4 5v13h17V5H4zm5 11H6V7h3v9zm5 0h-3V7h3v9zm5 0h-3V7h3v9z" />
-      </svg>
-    );
+    viewIcon = "view_column";
   } else {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M5 5h15v3H5zm12 5h3v9h-3zm-7 0h5v9h-5zm-5 0h3v9H5z" opacity=".3" />
-        <path d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 19H5v-9h3v9zm7 0h-5v-9h5v9zm5 0h-3v-9h3v9zm0-11H5V5h15v3z" />
-      </svg>
-    );
+    viewIcon = "view_array";
   }
   const title = {
     calendar: "Calendar",
@@ -622,18 +494,7 @@ export const MobileAppBar = (props) => {
             />
           </ToggleGroup>
           <Tooltip enterDelay={500} content="Category" align="bottom">
-            <div className="category-button" onClick={props.openStatisticsDialog}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 0 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <circle cx="17.5" cy="17.5" opacity=".3" r="2.5" />
-                    <path d="M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z" opacity=".3" />
-                    <path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM11 13.5H3v8h8v-8zm-2 6H5v-4h4v4z" />
-                  </svg>
-                </div>
-              </Ripple>
-            </div>
+            <TopAppBarActionItem icon="category" className="category-button" onClick={props.openStatisticsDialog}  style={{ "--animation-delay": 0 }} />
           </Tooltip>
         </TopAppBarSection>
       )
@@ -673,13 +534,7 @@ export const MobileAppBar = (props) => {
             onClose={closeViewMenu}
           />
           <Tooltip enterDelay={500} content="View" align="bottom">
-            <div onClick={openViewMenu}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 3 }}>
-                  {viewIcon}
-                </div>
-              </Ripple>
-            </div>
+            <TopAppBarActionItem icon={viewIcon} onClick={openViewMenu} style={{ "--animation-delay": 3 }} />
           </Tooltip>
         </MenuSurfaceAnchor>
         <div>
@@ -765,49 +620,14 @@ export const BottomAppBar = (props) => {
     setSearchOpen(false);
   };
   let viewIcon;
-  if (props.view === "card") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M4 5h3v13H4zm14 0h3v13h-3zM8 18h9V5H8v13zm2-11h5v9h-5V7z" />
-        <path d="M10 7h5v9h-5z" opacity=".3" />
-      </svg>
-    );
-  } else if (props.view === "list") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" opacity=".87" />
-        <path d="M5 11h2v2H5zm0 4h2v2H5zm0-8h2v2H5zm4 0h9v2H9zm0 8h9v2H9zm0-4h9v2H9z" opacity=".3" />
-        <path d="M3 5v14h17V5H3zm4 12H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V7h2v2zm11 8H9v-2h9v2zm0-4H9v-2h9v2zm0-4H9V7h9v2z" />
-      </svg>
-    );
+  if (props.view === "list") {
+    viewIcon = "view_list";
   } else if (props.view === "imageList") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path
-          d="M11 12.5h3V16h-3zM11 7h3v3.5h-3zm-5 5.5h3V16H6zM6 7h3v3.5H6zm10 0h3v3.5h-3zm0 5.5h3V16h-3z"
-          opacity=".3"
-        />
-        <path d="M4 5v13h17V5H4zm5 11H6v-3.5h3V16zm0-5.5H6V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5z" />
-      </svg>
-    );
+    viewIcon = "view_module";
   } else if (props.view === "compact") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M6 7h3v9H6zm5 0h3v9h-3zm5 0h3v9h-3z" opacity=".3" />
-        <path d="M4 5v13h17V5H4zm5 11H6V7h3v9zm5 0h-3V7h3v9zm5 0h-3V7h3v9z" />
-      </svg>
-    );
+    viewIcon = "view_column";
   } else {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M5 5h15v3H5zm12 5h3v9h-3zm-7 0h5v9h-5zm-5 0h3v9H5z" opacity=".3" />
-        <path d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 19H5v-9h3v9zm7 0h-5v-9h5v9zm5 0h-3v-9h3v9zm0-11H5V5h15v3z" />
-      </svg>
-    );
+    viewIcon = "view_array";
   }
   const buttons =
     props.page === "statistics" ? (
@@ -865,18 +685,7 @@ export const BottomAppBar = (props) => {
             />
           </ToggleGroup>
           <Tooltip enterDelay={500} content="Category" align="top">
-            <div className="category-button" onClick={props.openStatisticsDialog}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 0 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <circle cx="17.5" cy="17.5" opacity=".3" r="2.5" />
-                    <path d="M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z" opacity=".3" />
-                    <path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM11 13.5H3v8h8v-8zm-2 6H5v-4h4v4z" />
-                  </svg>
-                </div>
-              </Ripple>
-            </div>
+            <TopAppBarActionItem icon="category" className="category-button" onClick={props.openStatisticsDialog} style={{ "--animation-delay": 0 }} />
           </Tooltip>
         </TopAppBarSection>
       )
@@ -916,13 +725,7 @@ export const BottomAppBar = (props) => {
             onClose={closeViewMenu}
           />
           <Tooltip enterDelay={500} content="View" align="top">
-            <div onClick={openViewMenu}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 3 }}>
-                  {viewIcon}
-                </div>
-              </Ripple>
-            </div>
+            <TopAppBarActionItem icon={viewIcon} onClick={openViewMenu} style={{ "--animation-delay": 3 }} />
           </Tooltip>
         </MenuSurfaceAnchor>
         <div>
@@ -998,49 +801,14 @@ export const BottomAppBarIndent = (props) => {
     props.changeView(views[index]);
   };
   let viewIcon;
-  if (props.view === "card") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M4 5h3v13H4zm14 0h3v13h-3zM8 18h9V5H8v13zm2-11h5v9h-5V7z" />
-        <path d="M10 7h5v9h-5z" opacity=".3" />
-      </svg>
-    );
-  } else if (props.view === "list") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" opacity=".87" />
-        <path d="M5 11h2v2H5zm0 4h2v2H5zm0-8h2v2H5zm4 0h9v2H9zm0 8h9v2H9zm0-4h9v2H9z" opacity=".3" />
-        <path d="M3 5v14h17V5H3zm4 12H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V7h2v2zm11 8H9v-2h9v2zm0-4H9v-2h9v2zm0-4H9V7h9v2z" />
-      </svg>
-    );
+  if (props.view === "list") {
+    viewIcon = "view_list";
   } else if (props.view === "imageList") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path
-          d="M11 12.5h3V16h-3zM11 7h3v3.5h-3zm-5 5.5h3V16H6zM6 7h3v3.5H6zm10 0h3v3.5h-3zm0 5.5h3V16h-3z"
-          opacity=".3"
-        />
-        <path d="M4 5v13h17V5H4zm5 11H6v-3.5h3V16zm0-5.5H6V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5zm5 5.5h-3v-3.5h3V16zm0-5.5h-3V7h3v3.5z" />
-      </svg>
-    );
+    viewIcon = "view_module";
   } else if (props.view === "compact") {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M6 7h3v9H6zm5 0h3v9h-3zm5 0h3v9h-3z" opacity=".3" />
-        <path d="M4 5v13h17V5H4zm5 11H6V7h3v9zm5 0h-3V7h3v9zm5 0h-3V7h3v9z" />
-      </svg>
-    );
+    viewIcon = "view_column";
   } else {
-    viewIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M5 5h15v3H5zm12 5h3v9h-3zm-7 0h5v9h-5zm-5 0h3v9H5z" opacity=".3" />
-        <path d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 19H5v-9h3v9zm7 0h-5v-9h5v9zm5 0h-3v-9h3v9zm0-11H5V5h15v3z" />
-      </svg>
-    );
+    viewIcon = "view_array";
   }
   const buttons = (
     <div className="actions">
@@ -1078,13 +846,7 @@ export const BottomAppBarIndent = (props) => {
           onClose={closeViewMenu}
         />
         <Tooltip enterDelay={500} content="View" align="top">
-          <div onClick={openViewMenu}>
-            <Ripple unbounded>
-              <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 3 }}>
-                {viewIcon}
-              </div>
-            </Ripple>
-          </div>
+          <TopAppBarActionItem icon={viewIcon} onClick={openViewMenu} style={{ "--animation-delay": 3 }} />
         </Tooltip>
       </MenuSurfaceAnchor>
       <Tooltip enterDelay={500} content="Search" align="top">

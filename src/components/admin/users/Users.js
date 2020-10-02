@@ -242,7 +242,7 @@ export class Users extends React.Component {
             <MenuItem selected={this.state.view === "card"}>Card</MenuItem>
             <MenuItem selected={this.state.view === "table"}>Table</MenuItem>
           </Menu>
-          <IconButton
+          <TopAppBarActionItem
             icon={this.state.view === "card" ? "view_array" : "view_list"}
             onClick={this.openViewMenu}
             style={{ "--animation-delay": 3 }}
