@@ -178,14 +178,6 @@
     }
     .mdc-card__actions {
       justify-content: flex-end;
-      .svg-container {
-        &.disabled {
-          &::before {
-            content: none;
-          }
-          cursor: default;
-        }
-      }
     }
   }
 }

@@ -606,9 +606,6 @@ $overlay-values: (
         fill: if($dark, overlay-elevation(map-get($variables, surface), 4), map-get($variables, primary));
       }
     }
-    .svg-container {
-      @include mdc-states(map-get($variables, if($dark, on-surface, on-primary)));
-    }
 
     .mdc-button {
       color: map-get($variables, if($dark, text-primary, on-primary));
@@ -632,8 +629,7 @@ $overlay-values: (
     &__cell {
       background-color: transparent;
       border-color: var(--divider-color);
-      .mdc-icon-button,
-      .svg-container.mdc-icon-button {
+      .mdc-icon-button {
         color: map-get($variables, text-secondary);
         @include mdc-states(map-get($variables, on-surface));
         &.disabled {

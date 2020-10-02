@@ -23,11 +23,6 @@
       }
     }
   }
-  .svg-container {
-    position: relative;
-    @include mdc-ripple-surface;
-    @include mdc-ripple-radius-unbounded;
-  }
   .logo {
     height: 40px;
   }
