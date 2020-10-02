@@ -58,6 +58,10 @@ $mdc-theme-on-surface: #000;
   border-color: var(--divider-color);
 }
 
+.material-icons {
+  font-family: "Material Icons Two Tone", "Material Icons";
+}
+
 .mdc-drawer .mdc-list-item {
   border-radius: 0;
 }
