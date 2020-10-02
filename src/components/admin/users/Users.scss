@@ -1,6 +1,5 @@
 @import "@material/animation/variables";
 @import "@material/elevation/mixins";
-@import "@material/ripple/mixins";
 @import "@material/textfield/mixins";
 @import "@material/typography/mixins";
 
@@ -70,14 +69,6 @@
       }
       &__body .rmwc-data-table__row {
         .rmwc-data-table__cell {
-          .svg-container {
-            position: relative;
-            @include mdc-ripple-surface;
-            @include mdc-ripple-radius-unbounded;
-            &.disabled {
-              cursor: default;
-            }
-          }
           .nickname {
             height: 32px;
             width: 200px;

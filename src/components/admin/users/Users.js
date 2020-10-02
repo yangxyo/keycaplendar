@@ -19,7 +19,7 @@ import {
   DataTableBody,
 } from "@rmwc/data-table";
 import { CircularProgress } from "@rmwc/circular-progress";
-import { Ripple } from "@rmwc/ripple";
+import { IconButton } from "@rmwc/icon-button";
 import { Menu, MenuItem, MenuSurfaceAnchor } from "@rmwc/menu";
 import { Dialog, DialogTitle, DialogContent, DialogActions, DialogButton } from "@rmwc/dialog";
 import { UserRow } from "./UserRow";
@@ -242,25 +242,11 @@ export class Users extends React.Component {
             <MenuItem selected={this.state.view === "card"}>Card</MenuItem>
             <MenuItem selected={this.state.view === "table"}>Table</MenuItem>
           </Menu>
-          <div onClick={this.openViewMenu}>
-            <Ripple unbounded>
-              <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 3 }}>
-                {this.state.view === "card" ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M4 5h3v13H4zm14 0h3v13h-3zM8 18h9V5H8v13zm2-11h5v9h-5V7z" />
-                    <path d="M10 7h5v9h-5z" opacity=".3" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" opacity=".87" />
-                    <path d="M5 11h2v2H5zm0 4h2v2H5zm0-8h2v2H5zm4 0h9v2H9zm0 8h9v2H9zm0-4h9v2H9z" opacity=".3" />
-                    <path d="M3 5v14h17V5H3zm4 12H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V7h2v2zm11 8H9v-2h9v2zm0-4H9v-2h9v2zm0-4H9V7h9v2z" />
-                  </svg>
-                )}
-              </div>
-            </Ripple>
-          </div>
+          <IconButton
+            icon={this.state.view === "card" ? "view_array" : "view_list"}
+            onClick={this.openViewMenu}
+            style={{ "--animation-delay": 3 }}
+          />
         </MenuSurfaceAnchor>
       ) : null;
     return (
