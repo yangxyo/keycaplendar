@@ -58,8 +58,17 @@ $mdc-theme-on-surface: #000;
   border-color: var(--divider-color);
 }
 
+/*
+  filled: Material Icons
+  outlined: Material Icons Outlined
+  rounded: Material Icons Round
+  two tone: Material Icons Two Tone
+  sharp: Material Icons Sharp
+
+  two tone does not accept color correctly.
+*/
 .material-icons {
-  font-family: "Material Icons Two Tone", "Material Icons";
+  font-family: "Material Icons Outlined", "Material Icons";
 }
 
 .mdc-drawer .mdc-list-item {
