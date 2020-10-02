@@ -9,7 +9,6 @@ import {
   TopAppBarFixedAdjust,
 } from "@rmwc/top-app-bar";
 import { Tooltip } from "@rmwc/tooltip";
-import { Ripple } from "@rmwc/ripple";
 import { LinearProgress } from "@rmwc/linear-progress";
 import { MenuSurfaceAnchor, Menu, MenuItem } from "@rmwc/menu";
 import { TabBar, Tab } from "@rmwc/tabs";

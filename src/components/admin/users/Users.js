@@ -19,7 +19,6 @@ import {
   DataTableBody,
 } from "@rmwc/data-table";
 import { CircularProgress } from "@rmwc/circular-progress";
-import { IconButton } from "@rmwc/icon-button";
 import { Menu, MenuItem, MenuSurfaceAnchor } from "@rmwc/menu";
 import { Dialog, DialogTitle, DialogContent, DialogActions, DialogButton } from "@rmwc/dialog";
 import { UserRow } from "./UserRow";
