@@ -116,16 +116,7 @@ export const DesktopAppBar = (props) => {
               onClick={() => {
                 props.setStatisticsSort("duration", "duration");
               }}
-              icon={{
-                strategy: "component",
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M5 8h14V6H5z" opacity=".3" />
-                    <path d="M7 11h2v2H7zm12-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-4 3h2v2h-2zm-4 0h2v2h-2z" />
-                  </svg>
-                ),
-              }}
+              icon="date_range"
             />
           </ToggleGroup>
           <ToggleGroup>
@@ -400,16 +391,7 @@ export const TabletAppBar = (props) => {
               onClick={() => {
                 props.setStatisticsSort("duration", "duration");
               }}
-              icon={{
-                strategy: "component",
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M5 8h14V6H5z" opacity=".3" />
-                    <path d="M7 11h2v2H7zm12-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-4 3h2v2h-2zm-4 0h2v2h-2z" />
-                  </svg>
-                ),
-              }}
+              icon="date_range"
             />
           </ToggleGroup>
           <ToggleGroup>
@@ -430,16 +412,12 @@ export const TabletAppBar = (props) => {
           </ToggleGroup>
           <Tooltip enterDelay={500} content="Category" align="bottom">
             <div className="category-button" onClick={props.openStatisticsDialog}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 0 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <circle cx="17.5" cy="17.5" opacity=".3" r="2.5" />
-                    <path d="M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z" opacity=".3" />
-                    <path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM11 13.5H3v8h8v-8zm-2 6H5v-4h4v4z" />
-                  </svg>
-                </div>
-              </Ripple>
+              <TopAppBarActionItem
+                icon="category"
+                className="category-button"
+                onClick={props.openStatisticsDialog}
+                style={{ "--animation-delay": 0 }}
+              />
             </div>
           </Tooltip>
         </TopAppBarSection>
@@ -478,7 +456,12 @@ export const TabletAppBar = (props) => {
             />
           </ToggleGroup>
           <Tooltip enterDelay={500} content="Category" align="bottom">
-            <TopAppBarActionItem icon="category" className="category-button" onClick={props.openStatisticsDialog} style={{ "--animation-delay": 0 }} />
+            <TopAppBarActionItem
+              icon="category"
+              className="category-button"
+              onClick={props.openStatisticsDialog}
+              style={{ "--animation-delay": 0 }}
+            />
           </Tooltip>
         </TopAppBarSection>
       )
@@ -672,16 +655,7 @@ export const MobileAppBar = (props) => {
               onClick={() => {
                 props.setStatisticsSort("duration", "duration");
               }}
-              icon={{
-                strategy: "component",
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M5 8h14V6H5z" opacity=".3" />
-                    <path d="M7 11h2v2H7zm12-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-4 3h2v2h-2zm-4 0h2v2h-2z" />
-                  </svg>
-                ),
-              }}
+              icon="date_range"
             />
           </ToggleGroup>
           <ToggleGroup>
@@ -702,16 +676,12 @@ export const MobileAppBar = (props) => {
           </ToggleGroup>
           <Tooltip enterDelay={500} content="Category" align="bottom">
             <div className="category-button" onClick={props.openStatisticsDialog}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 0 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <circle cx="17.5" cy="17.5" opacity=".3" r="2.5" />
-                    <path d="M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z" opacity=".3" />
-                    <path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM11 13.5H3v8h8v-8zm-2 6H5v-4h4v4z" />
-                  </svg>
-                </div>
-              </Ripple>
+              <TopAppBarActionItem
+                icon="category"
+                className="category-button"
+                onClick={props.openStatisticsDialog}
+                style={{ "--animation-delay": 0 }}
+              />
             </div>
           </Tooltip>
         </TopAppBarSection>
@@ -750,7 +720,12 @@ export const MobileAppBar = (props) => {
             />
           </ToggleGroup>
           <Tooltip enterDelay={500} content="Category" align="bottom">
-            <TopAppBarActionItem icon="category" className="category-button" onClick={props.openStatisticsDialog}  style={{ "--animation-delay": 0 }} />
+            <TopAppBarActionItem
+              icon="category"
+              className="category-button"
+              onClick={props.openStatisticsDialog}
+              style={{ "--animation-delay": 0 }}
+            />
           </Tooltip>
         </TopAppBarSection>
       )
@@ -946,16 +921,7 @@ export const BottomAppBar = (props) => {
               onClick={() => {
                 props.setStatisticsSort("duration", "duration");
               }}
-              icon={{
-                strategy: "component",
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M5 8h14V6H5z" opacity=".3" />
-                    <path d="M7 11h2v2H7zm12-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-4 3h2v2h-2zm-4 0h2v2h-2z" />
-                  </svg>
-                ),
-              }}
+              icon="date_range"
             />
           </ToggleGroup>
           <ToggleGroup>
@@ -976,16 +942,12 @@ export const BottomAppBar = (props) => {
           </ToggleGroup>
           <Tooltip enterDelay={500} content="Category" align="bottom">
             <div className="category-button" onClick={props.openStatisticsDialog}>
-              <Ripple unbounded>
-                <div tabIndex="0" className="svg-container mdc-icon-button" style={{ "--animation-delay": 0 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <circle cx="17.5" cy="17.5" opacity=".3" r="2.5" />
-                    <path d="M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z" opacity=".3" />
-                    <path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM11 13.5H3v8h8v-8zm-2 6H5v-4h4v4z" />
-                  </svg>
-                </div>
-              </Ripple>
+              <TopAppBarActionItem
+                icon="category"
+                className="category-button"
+                onClick={props.openStatisticsDialog}
+                style={{ "--animation-delay": 0 }}
+              />
             </div>
           </Tooltip>
         </TopAppBarSection>
@@ -1024,7 +986,12 @@ export const BottomAppBar = (props) => {
             />
           </ToggleGroup>
           <Tooltip enterDelay={500} content="Category" align="top">
-            <TopAppBarActionItem icon="category" className="category-button" onClick={props.openStatisticsDialog} style={{ "--animation-delay": 0 }} />
+            <TopAppBarActionItem
+              icon="category"
+              className="category-button"
+              onClick={props.openStatisticsDialog}
+              style={{ "--animation-delay": 0 }}
+            />
           </Tooltip>
         </TopAppBarSection>
       )
