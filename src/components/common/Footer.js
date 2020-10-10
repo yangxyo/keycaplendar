@@ -246,16 +246,7 @@ export const Footer = () => {
         <Tooltip align="top" content="keycaplendar@gmail.com" showArrow>
           <Button
             label="Email"
-            icon={{
-              strategy: "component",
-              icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                  <path d="M0 0h24v24H0V0z" fill="none" />
-                  <path d="M20 8l-8 5-8-5v10h16zm0-2H4l8 4.99z" opacity=".3" />
-                  <path d="M4 20h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2zM20 6l-8 4.99L4 6h16zM4 8l8 5 8-5v10H4V8z" />
-                </svg>
-              ),
-            }}
+            icon="email"
             tag="a"
             href="mailto:keycaplendar@gmail.com?subject=KeycapLendar%20Change"
             target="_blank"
@@ -293,7 +284,7 @@ export const Footer = () => {
             icon: (
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
                 <path fill="none" d="M0,0h24v24H0V0z" />
-                <path opacity="0.3" d="M8,17h6c1.1,0,2-0.9,2-2V7H6v8C6,16.1,6.9,17,8,17z" />
+                <path opacity="0" d="M8,17h6c1.1,0,2-0.9,2-2V7H6v8C6,16.1,6.9,17,8,17z" />
                 <path
                   d="M4,15c0,2.2,1.8,4,4,4h6c2.2,0,4-1.8,4-4v-3h2c1.1,0,2-0.9,2-2V7c0-1.1-0.9-2-2-2H4V15z M18,7h2v3h-2V7z M6,7h10v8
 		c0,1.1-0.9,2-2,2H8c-1.1,0-2-0.9-2-2V7z"
